@@ -1,5 +1,4 @@
 @import "variables";
-
 $avatar-size: 40px;
 $header-padding-y: 16px;
 $back-icon-size: 16px;
@@ -7,31 +6,81 @@ $back-icon-size: 16px;
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: $primary-color;
   padding: $header-padding-y 16px;
   font-weight: bold;
-
+  
+  &_loginBtn {
+    background-color: $base-bg-color;
+    height: $avatar-size;
+    border-radius: 8px;
+    font-size: 12px;
+    padding: 12px 16px;
+    color: $primary-color;
+  }
+  
   &_logos {
     min-width: 0;
     display: flex;
-
-    img {
-      cursor: pointer;
-      width: $back-icon-size;
-      height: $back-icon-size;
-      margin: ($avatar-size - $back-icon-size) / 2 8px 0;
-    }
+    align-items: center;
+    flex: 1;
+    justify-content: space-between;
   }
-
+  
+  &_back {
+    cursor: pointer;
+    width: $back-icon-size;
+    height: $back-icon-size;
+    margin: ($avatar-size - $back-icon-size) / 2 8px 0;
+  }
+  
   &_pageTitle {
     color: white;
     line-height: $avatar-size;
     font-size: $font-lg;
   }
-
+  
   &_avatar {
     width: $avatar-size;
     height: $avatar-size;
     border-radius: 100%;
+  }
+}
+
+// ドロップダウンメニュー
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+  &-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 4px;
+    margin-top: 8px;
+
+    a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+
+      &:hover {
+        background-color: #f1f1f1;
+      }
+    }
+  }
+
+  &:hover &-content {
+    display: block;
+  }
+
+  .dropbtn {
+    cursor: pointer;
   }
 }
