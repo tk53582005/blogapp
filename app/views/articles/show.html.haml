@@ -20,7 +20,7 @@
                         data: { turbo_method: 'delete', turbo_confirm: '本当に削除してもよろしいですか？' }
 
   .article_content
-    = @article.content
+    = @article.content.body
 
   - if user_signed_in?
     - if current_user.has_liked?(@article)
