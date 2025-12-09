@@ -20,6 +20,7 @@ gem 'jbuilder'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 gem 'annotate'
+gem 'active_decorator'
 gem 'better_errors'
 gem 'binding_of_caller'
 gem 'devise'
