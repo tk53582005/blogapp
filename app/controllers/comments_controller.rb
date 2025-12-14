@@ -1,22 +1,23 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index]
   
   def new
     @article = Article.find(params[:article_id])
     @comment = @article.comments.build
   end
 
+  def index
+    @article = Article.find(params[:article_id])
+    comments = @article.comments
+    render json: comments
+  end
+
   def create
     @article = Article.find(params[:article_id])
     @comment = @article.comments.build(comment_params)
     @comment.user = current_user
-    
-    if @comment.save
-      redirect_to article_path(@article), notice: 'コメントを追加'
-    else
-      flash.now[:error] = '更新できませんでした'
-      render :new, status: :unprocessable_entity
-    end
+    @comment.save!
+    render json: @comment
   end
 
   private
