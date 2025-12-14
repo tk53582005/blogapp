@@ -8,14 +8,37 @@ input, select {
 }
 
 label {
-  font-size: 12px;
+  display: block;
+  text-align: center;
+  padding: 16px;
+  background-color: #ffffff;
+  border: 1px solid #c5d9a8;
+  border-radius: 4px;
+  margin: 8px 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #8ba556;
+}
+
+.comment-form-header {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  background-color: #ffffff;
+  border: 1px solid #c5d9a8;
+  border-radius: 4px;
+  margin: 8px 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #8ba556;
 }
 
 textarea, trix-editor {
   width: 100%;
   margin: 8px 0px;
   padding: 8px 8px;
-  min-height: 440px;
+  min-height: 160px;
   resize: vertical;
-  border: 1px solid #EBEBEB;
+  border: 2px solid #4a90e2;
+  border-radius: 4px;
 }
