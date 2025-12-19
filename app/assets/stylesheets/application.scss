@@ -1,14 +1,15 @@
+@import 'variables';
+@import 'common';
 @import 'header';
 @import 'tabs';
-@import 'variables';
 @import 'card';
 @import 'article';
 @import 'buttons';
 @import 'form';
 @import 'flash';
-@import 'common';
 @import 'profile';
 @import 'actiontext';
+@import 'footer';
 
 html {
   word-spacing: 1px;
@@ -24,7 +25,7 @@ html {
 *:before,
 *:after {
   box-sizing: border-box;
-  margin: 0;
+  // margin: 0;  ← この行を削除またはコメントアウト
 }
 
 body {
@@ -32,13 +33,13 @@ body {
   background-color: $base-bg-color;
   font-size: 1em;
   color: $text-base-color;
+  margin: 0;  // ← bodyだけmargin: 0を適用
 }
 
 a {
   text-decoration: none;
   color: $text-base-color;
 }
-
 
 .container {
   padding: 16px 16px;
@@ -65,4 +66,3 @@ a {
 .hidden {
   display: none;
 }
-
