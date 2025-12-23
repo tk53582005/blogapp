@@ -33,7 +33,7 @@ export const initArticle = () => {
   if (!articleId) return;
 
   // コメント一覧を取得
-  axios.get(`/articles/${articleId}/comments`).then((response) => {
+  axios.get(`/api/articles/${articleId}/comments`).then((response) => {
     const comments = response.data;
     comments.forEach((comment) => {
       appendNewComment(comment);
@@ -51,7 +51,7 @@ export const initArticle = () => {
       window.alert("コメントを入力してください");
     } else {
       axios
-        .post(`/articles/${articleId}/comments`, {
+        .post(`/api/articles/${articleId}/comments`, {
           comment: { content: content },
         })
         .then((res) => {
@@ -63,7 +63,7 @@ export const initArticle = () => {
   });
 
   // いいね状態を取得
-  axios.get(`/articles/${articleId}/like`).then((response) => {
+  axios.get(`/api/articles/${articleId}/like`).then((response) => {
     const hasLiked = response.data.hasLiked;
     handleHeartDisplay(hasLiked);
   });

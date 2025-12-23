@@ -35,6 +35,6 @@
   .btn-secondary.show-comment-form
     コメントを追加
   .comment-text-area.hidden
-    = form_with(model: Comment.new, url: article_comments_path(@article), id: 'comment-form') do |f|
+    = form_with(model: Comment.new, url: api_comments_path(article_id: @article.id), id: 'comment-form') do |f|
       = f.text_area :content, placeholder: ''
       = f.submit 'コメントを追加', class: 'btn-secondary'
